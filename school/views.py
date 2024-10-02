@@ -6,8 +6,14 @@ from .models import Student, Teacher
 
 def students_list(request):
     template = 'school/students_list.html'
-    object_list = Student.students.get('')
+    object_list = Student.objects.all()
     print(object_list)
+    students = Student.objects.all()
+    for student in students:
+        print(student.name)  # имя
+        print(student.group)  # класс
+    teachers = student.teachers.all()
+    print(teachers)
     context = {'object_list':object_list}
 
     # используйте этот параметр для упорядочивания результатов
